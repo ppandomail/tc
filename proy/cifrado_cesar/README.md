@@ -6,9 +6,9 @@ Este programa aplica el cifrado de César sobre una cadena de caracteres usando 
 
 El cifrado César consiste en sustituir cada letra del abecedario por una letra desplazada un número determinado de posiciones (clave). Por ejemplo, si ciframos usando la clave 1, reemplazaríamos la letra A con la B, la B con la C, y así sucesivamente hasta sustituir la Z por la A.
 
-## Estrategia 
+## Estrategia
 
-### Primera parte, cifrado del caracter:
+### Primera parte, cifrado del caracter
 
 La estrategia que usa el programa consiste en, en primera instancia, leer la clave ingresada de derecha a izquierda y, valiéndose del funcionamiento de la suma en números binarios, si el valor que lee es un 0, continúa leyendo el próximo dígito de la clave, si es un 1, avanza hacia la derecha ignorando los 1, 0, - y (de ya haber computado alguna suma sobre un número anteriormente, los . [esto se explicará más adelante]) hasta llegar a un # (separador de caracteres) o un blanco, al llegar a este punto, dependiendo de la posición que tenga el 1 dentro de la clave, se realiza la suma en la misma posición del caracter a cifrar, por ejemplo si la clave es 00001, al leer el 1 se realizará la suma sobre el último dígito del caracter en binario, si es 00010, se realizará la suma en el anteúltimo caracter.
 
@@ -16,7 +16,7 @@ Cabe recordar que la suma binaria funciona de la siguiente manera, si hay que su
 
 Una vez realizada la suma de la clave sobre un caracter, si quedan más números por leer se reemplaza el # por un ., esto explica por qué anteriormente debíamos ignorar los . encontrados entre los diferentes números a cifrar, porque representan que ese número ya fue cifrado.
 
-### Segunda parte, verificación de tamaño:
+### Segunda parte, verificación de tamaño
 
 El segundo gran bloque de estados y transiciones tiene como función determinar si al aplicar el desplazamiento de la clave a un grupo de caracteres el resultado final es mayor al último componente del alfabeto (Z, expresado en binario por su valor ASCII como 1011010).
 
@@ -24,7 +24,7 @@ Para lograr esto, en primer lugar se debe llegar al final de la cadena de carect
 
 Si ya verificaron todos los números cifrados, entonces el programa finaliza.
 
-### Tercera parte, resta del tamaño del alfabeto:
+### Tercera parte, resta del tamaño del alfabeto
 
 Como vimos anteriormente, si ocurriese el caso de que el valor cifrado es mayor que el valor de Z, necesitamos restar la longitud del alfabeto a este número para así obtener el caracter cifrado resultante. Por ejemplo, si ciframos Z con clave 1 tendríamos 1011011 como resultado. Al ser mayor que el valor de Z debemos restar 11010 (26) que es la longitud de nuestro alfabeto, al realizar la resta podemos ver que ahora el valor del número cifrado es de 1000001 que es el valor correspondiente a A.
 
@@ -297,17 +297,17 @@ Transiciones:
 δ(q76, 0) ⇒ (q46, 0, L)<br>
 δ(q76, 1) ⇒ (q46, 1, L)<br>
 
-## Diseño de JFLAP:
+## Diseño de JFLAP
 
-### Diseño de la primera parte:
+### Diseño de la primera parte
 
 ![JFLAP-primera-parte](/resources/img/primera-parte.png)
 
-### Diseño de la segunda parte:
+### Diseño de la segunda parte
 
 ![JFLAP-segunda-parte](/resources/img/segunda-parte.png)
 
-### Diseño de la tercera parte:
+### Diseño de la tercera parte
 
 ![JFLAP-tercera-parte](/resources/img/tercera-parte.png)
 
@@ -317,7 +317,7 @@ Simulator: <a>http://turingmachinesimulator.com/shared/rowquykrdy/</a>
 
 Configuración: [mt-conf](/resources/MT.mt)
 
-## Inputs X 10:
+## Inputs X 10
 
 |         Input          |         Output         |
 | ---------------------- | ---------------------- |
@@ -332,7 +332,7 @@ Configuración: [mt-conf](/resources/MT.mt)
 | 10011-1011001#1001111  | 00010-1010010#1001000  |
 | 11001-1011010#1011010  | 11001-1011001#1011010  |
 
-## Complejidad espacial:
+## Complejidad espacial
 
 |         Input          |         Output         |   Long. w de entrada   |   Long. w de salida    |   
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
@@ -356,9 +356,9 @@ Entradas de la forma "A-B#C": La longitud de la salida es la suma de las longitu
 
 Por lo que podemos asegurar que la complejidad espacial se encuentra representada por <b>O(n)<b>.
 
-## Complejidad temporal:
+## Complejidad temporal
 
-|         Input          |         Output         |Cantidad de movimientos |      Incremento        |   
+|         Input          |         Output         |Cantidad de movimientos |      Incremento        |
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
 | Clave | ---------------------- | ---------------------- | ---------------------- |
 |     00001-1000001      |     00001-1000010      |           56           |           -            |
@@ -394,30 +394,37 @@ Por lo que podemos asegurar que la complejidad espacial se encuentra representad
 | 01111-1011000#1011000#1011000  | 01111-1001100#1001100#1001100  |           660          |           302           |
 | 01111-1011000#1011000#1011000#1011000  | 01111-1001100#1001100#1001100#1001100  |           1042         |         382        |
 
-### Incremento Lineal con el input de la clave:
+### Incremento Lineal con el input de la clave
+
 En los primeros casos, donde solo se incrementa el número binario de la clave, se observa un incremento constante de 2 movimientos por cada bit desplazado a izquierda en el input. Esto sugiere una complejidad lineal, O(n), donde "n" crece con el tamaño del número de la clave.
 
-### Incrementos Mayores en Casos Específicos:
+### Incrementos Mayores en Casos Específicos
+
 Los incrementos de 18 movimientos indican que hay casos específicos que requieren un mayor número de operaciones. Estos casos pueden deberse a la necesidad de realizar operaciones adicionales, como "acarreo" en la suma binaria, que requieren recorrer una mayor parte del input.
 
-### Operaciones Constantes (Caracter):
+### Operaciones Constantes (Caracter)
+
 Los casos donde se mantiene constante la cantidad de movimientos indican que ciertas operaciones no dependen del valor del input de caracter, lo que sugiere una complejidad constante, O(1). En este caso puntual, observamos que modificar el valor que tiene el caracter, pareciera no impactar en la cantidad de operaciones a realizar.
 
-### Operaciones de Resta:
+### Operaciones de Resta
+
 Los casos de resta muestran un incremento proporcional a la longitud, pero con un factor mayor que la suma simple, lo que podría indicar una complejidad de O(n) pero con una constante multiplicativa mayor.
 
-### Agregar Caracter:
+### Agregar Caracter
+
 Agregar carácteres, o concatenar inputs, aumenta significativamente la cantidad de movimientos. El incremento no es estrictamente lineal, sino que parece aumentar de forma cuadrática o cercana a ella. Esto sugiere que al concatenar una gran cantidad de numeros, la complejidad aumentara considerablemente.
 
-### Casos Complejos por Longitud:
+### Casos Complejos por Longitud
+
 Estos casos reflejan "la peor situación" posible para cada longitud del input y confirman que a medida que aumenta la longitud del mismo, la cantidad de movimientos crece de forma acelerada. Esto refuerza la idea de una complejidad mayor que lineal para operaciones que involucran concatenación.
 
 ## Gráficos de complejidad temporal y espacial (aproximados)
 
-### Original:
+### Original
 
 ![grafico-temporal-espacial](/resources/img/grafico-movimientos-espacio.png)
 
-### Con escala logaritmica:
+### Con escala logaritmica
+
 (Con esta escala se visualiza mejor el crecimiento exponencial de la complejidad temporal)
 ![grafico-temporal-espacial](/resources/img/grafico-movimientos-espacio-log.png)

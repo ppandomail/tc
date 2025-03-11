@@ -1,24 +1,28 @@
 # Máquina de Turing - Conversión de números decimales a números Romanos
 
 ## Función que Computa
+
 La función principal de esta Máquina de Turing es recibir un número decimal (representado en base 10) y transformarlo en su equivalente en numeración romana, generando la salida en la cinta de la maquina.
 
 ### Estrategia de diseño
+
 - La entrada es un número decimal, con un # como separador (por ejemplo, "1987#").
 - La máquina lee la entrada dígito por dígito y la almacena en su cinta.
 
 ### Limitacion
+
 - La maquina espera como entrada 4 digitos decimales mas el simbolo #.
 - Por ejemplo: 0000#, 0500#, 0010#, etc.
 - De esta forma la maquina puede entender cual es el digito que se esta convirtiendo. (Millar, centena, decena, unidad)
 
 ### Conversión de Dígitos
+
 La máquina de Turing sigue un conjunto de reglas para traducir cada dígito según su posición (millares, centenas, decenas, unidades).  
 Utiliza reglas como:
 
 - **Unidades**  
   - `1 → I`, `2 → II`, `3 → III`, ..., `9 → IX`
- 
+
 - **Decenas**  
   - `10 → X`, `20 → XX`, ..., `90 → XC`  
 
@@ -29,9 +33,11 @@ Utiliza reglas como:
   - `1000 → M`, `2000 → MM`, `3000 → MMM`  
 
 ### Salida
+
 La máquina escribe la salida en la cinta, reemplazando cada dígito por su equivalente en números romanos.  
 
 Ejemplo para **1987#**:
+
 - `1000 → M`
 - `900 → CM`
 - `80 → LXXX`
@@ -39,6 +45,7 @@ Ejemplo para **1987#**:
 - **Resultado:** `#MCMLXXXVII`
 
 ## Límite de 3999 en los Números Romanos
+
 El sistema de numeración romana clásico no incluye un símbolo específico para 5000 ni para potencias mayores de 10.  
 Los números superiores a 3999 requieren una notación especial con líneas sobre los símbolos para multiplicarlos por 1000 (por ejemplo, `V̅` para representar `5000`).  
 
@@ -47,6 +54,7 @@ La máquina desarrollada se basa en la notación romana convencional sin líneas
 ---
 
 ## Formalismo
+
 La Máquina de Turing se define formalmente como una **7-tupla** `(Q, Σ, Γ, δ, q0, qA, qR)`, donde:
 
 - **Q**: {q87, q88, q91, q94, q_write_M, q_write_MM, q_write_MMM, q98, q76, q58, q67, q77, q59, q68, q60, q69, q61, q70, q62, q71, q63, q72, q64, q73, q65, q74, q66, q75, q85, q29, q30, q40, q_decenas, q_decenas_loop, q_write_XX, q_write_XXX, q_write_XL, q_write_LX, q_write_LXX, q_write_LXXX, q_write_XC, q57, q0, q1, q10, q_unidades, q_unidades_loop, q_write_II, q_write_III, q_write_IV, q_write_VI, q_write_VII, q_write_VIII, q_write_IX,q89,q92,q90,q93,q31,q41,q32,q42,q33,q43,q34,q44,q35,q45,q36,q46,q37,q47,q38,q48,q_write_CC,q_write_CCC,q_write_CD,q_write_DC,q_write_DCC,q_write_DCCC,q_write_CM,q_centenas_loop,q2,q11,q3,q12,q4,q13,q5,q14,q6,q15,q7,q16,q8,q17,q9,q18,q28}
@@ -55,6 +63,7 @@ La Máquina de Turing se define formalmente como una **7-tupla** `(Q, Σ, Γ, δ
 - **δ**: [Archivo TRANSICIONES](https://github.com/AgusCuevas/MT_Decimales_a_Romanos/blob/main/numeros%20romanos_2_transiciones.txt)
 - **q0**: q87.
 - **qA**: {q28}.
+
 ---
 
 ## Diseño JFlap
@@ -63,17 +72,18 @@ La Máquina de Turing se define formalmente como una **7-tupla** `(Q, Σ, Γ, δ
 
 [Archivo JFLAP](https://github.com/AgusCuevas/MT_Decimales_a_Romanos/blob/main/numeros%20romanos_2.1.jff)
 
-
 ## Programa Simulator
+
 El programa leerá un número decimal, simulará el comportamiento de la máquina y devolverá el resultado en numeración romana.
 
-Link simulador: http://turingmachinesimulator.com/shared/kkzlgewgni
+[Link simulador:](http://turingmachinesimulator.com/shared/kkzlgewgni)
 
 [Archivo SIMULADOR](https://github.com/AgusCuevas/MT_Decimales_a_Romanos/blob/main/numeros%20romanos_2_script.jff)
 
 ---
 
 ## Inputs: Configuraciones de Computación
+
 Se evaluarán **Diferentes entradas**, como:
 
 | Entrada  | Salida            | Movimientos| Celdas + 4|
@@ -84,7 +94,7 @@ Se evaluarán **Diferentes entradas**, como:
 | 0014#     | #XIV             |19          |4       |
 | 0040#     | #XL              |15          |2       |
 | 0055#     | #LV              |18          |3       |
-| 0067#     | #LXVII           |23          |6       | 
+| 0067#     | #LXVII           |23          |6       |
 | 0090#     | #XC              |15          |3       |
 | 0275#     | #CCLXXV          |43          |7       |
 | 0318#     | #CCCXVIII        |45          |9       |
