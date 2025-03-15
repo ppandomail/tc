@@ -1,9 +1,12 @@
 # Máquinas de Turing: Unario a Binario
 
-A continuación se presentara una maquina de turing que realiza la conversion de un input unario a binario. Se análiza su funcionamiento, se detalla su formalización, su comportamiento.
+## Nombre
 
-- **Nombre**: "Máquina de Turing de Conversión Unario a Binario"
-- **Función que computa**: La función que computa esta máquina es convertir un número en representación unaria a binario. Por ejemplo:
+Máquina de Turing de Conversión Unario a Binario
+
+## Función que computa
+
+ Convertir un número en representación unaria a binario. Por ejemplo:
 
 | unario    | binario |
 | --------- | ------- |
@@ -17,7 +20,9 @@ A continuación se presentara una maquina de turing que realiza la conversion de
 | 11111111  | 111     |
 | 111111111 | 1000    |
 
-**Descripción y estrategia**: Esta maquina de turing toma unarios y los divide por 2 almacenando restos para que luego se leen al reves y poder formar el número binario.
+## Descripción y estrategia
+
+Esta maquina de turing toma unarios y los divide por 2 almacenando restos para que luego se leen al reves y poder formar el número binario.
 
 La máquina lo primero que hace es cambiar el primer 1 por un #, pero existen casos base, porque si como siguiente a este no existe otro _1_ borra el # y resuelve como _0_ en binario. Existen casos bases similares para el 1 y 10 en binario.
 
@@ -34,7 +39,10 @@ Ejemplo con número 11111 (_4_ en decimal o lo que es lo mismo _100_ binario):
 - 00#1 - Por último, antes de entrar a alternar _Ys_ comprueba si luego del # hay un solo digito o ninguno, para determinar inmediatamente el ultimo resto, Si luego del # hay b(blanco) el resto es _0_, sino es _1_
 - 100 - ahora por último elimina los de números y _#_ derechos, y almacena el resto en la izquierda
 
-- **Formalismo**: MT = < Г, Σ, b, Q, q_0, F, δ>
+## Formalismo
+
+MT = < Г, Σ, b, Q, q_0, F, δ>
+
   - Alfabeto de la cinta: Г = {1, 0, Y, b, #}
   - Alfabeto de entrada: Σ = {1}
   - Símbolo blanco: b = b
@@ -117,11 +125,16 @@ Ejemplo con número 11111 (_4_ en decimal o lo que es lo mismo _100_ binario):
     - δ(q42, 0) = (q42, 0, R),
     - δ(q42, #) = (q14, #, R),
     - }
-- **Diseño en JFlap**:
-- ![Diseño JFlap](./resources/jflap.jpg)
-- **Comprobaciones**:
-  ![picture 0](./resources/comprobaciones.jpg)
-- **Tabla con x10 inputs**:
+
+## Diseño en JFlap
+
+![Diseño JFlap](./resources/jflap.jpg)
+
+## Comprobaciones
+
+![picture 0](./resources/comprobaciones.jpg)
+
+## Tabla con x10 inputs
 
   |n (decimal) | Conf. inicial | Conf. final | Pasos | Espacios | Estado |
   | --- | --- | --- | --- | --- | --- |
@@ -136,14 +149,15 @@ Ejemplo con número 11111 (_4_ en decimal o lo que es lo mismo _100_ binario):
   | 8 | 111111111 | 1000 | 122 | 14 | Aceptado |
   | 9 | 1111111111 | 1001 | 123 | 15 | Aceptado |
 
-- **Programa Simulator**: [Programa Simulator](https://turingmachinesimulator.com/shared/jlyefvhecl)
-- **Programa Prolog**: [Programa Prolog](./resources/unary-to-binary.pl)
+## Programa Simulator
 
-## **Calculos de complejidades computacional en la máquinas de Turing**
+[Programa Simulator](https://turingmachinesimulator.com/shared/jlyefvhecl)
+
+## Calculos de complejidades computacional en la máquinas de Turing
 
 Se evalúa en términos de su complejidad espacial y temporal, usando datos de entrada para luego obtener un gráfico que forma una asíntota y también su fórmula matemática.
 
-### **Complejidad Espacial**
+### Complejidad Espacial
 
 ![Formula Esp](./resources/formula-espacial.png)
 
@@ -178,7 +192,7 @@ La función tiene números específicos para los números 0, 1, 2, 3, pero a par
 
 En términos de complejidad espacial es 𝑂(𝑛), ya que crece linealmente.
 
-### **Complejidad Temporal**
+### Complejidad Temporal
 
 ![Comp temp](./resources/comp-temporal.png)
 

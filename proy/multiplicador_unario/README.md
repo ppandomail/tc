@@ -1,61 +1,44 @@
-# 🖥️ **Máquina de Turing para la Multiplicación Unaria**
+# Máquina de Turing: Multiplicación de unarios
 
-Este documento describe una **Máquina de Turing** diseñada para realizar la **multiplicación de dos números en representación unaria**.
-
----
-
-## 📌 **1. Descripción de la Máquina de Turing**
-
-### 🔹 **Nombre**
+## Nombre
 
 Máquina de Turing para la Multiplicación Unaria
 
-### 🔹 **Función que Computa**
+## Función que Computa
 
-La máquina toma dos números en notación unaria, representados por secuencias de `1`s separadas por `#`, y calcula su **producto en unario**.
+La máquina toma dos números en notación unaria, representados por secuencias de '1's separadas por '#'', y calcula su **producto en unario**
 
-### 🔹 **Ejemplos de Entrada y Salida**
+## Ejemplos de Entrada y Salida
 
-| Entrada (unaria) | Salida (unaria) |
-| ---------------- | --------------- |
+| Entrada (unaria)   | Salida (unaria)  |
+| ----------------   | ---------------  |
 | 1111#111 (3×2)     | 1111111 (6)      |
 | 111#111 (2×2)      | 11111 (4)        |
 | 1111#1111 (3×3)    | 1111111111 (9)   |
 
-## **Descripción y estrategia mejorada**
+## Descripción y estrategia mejorada
 
-La máquina de Turing realiza la multiplicación de dos números representados en **notación unaria**. Cada número está formado por una secuencia de `1`s y está separado por el símbolo `#`. El objetivo es calcular el producto de estos dos números y escribir el resultado en la cinta, utilizando también notación unaria.
+La máquina de Turing realiza la multiplicación de dos números representados en **notación unaria**. Cada número está formado por una secuencia de '1's y está separado por el símbolo '#''. El objetivo es calcular el producto de estos dos números y escribir el resultado en la cinta, utilizando también notación unaria.
 
 ---
 
-## 📌 **2. Estrategia de Multiplicación**
+## Estrategia de Multiplicación
 
 La máquina de Turing sigue estos pasos para realizar la multiplicación:
 
-### 🔢 **1. Identificación de los Operandos**
+1. Identificación de los Operandos: se escanea la entrada para localizar los dos operandos, identificando el primer número antes del '#' y el segundo después de este.
+2. Copia del Primer Operando
+    * Se recorre el primer operando ('n' unos)
+    * Se copia 'n' veces según la cantidad de '1's en el segundo operando ('m')
+3. Uso de Marcadores Auxiliares ('X' y 'C')
+    * 'X': Se usa temporalmente para marcar los '1's procesados y evitar contarlos nuevamente
+    * 'C': Se usa para indicar la finalización del proceso de copiado de un grupo de '1's
+4. Construcción del Resultado
+    * Los '1's copiados se reubican al final de la cinta, representando la multiplicación
+    * Se eliminan los marcadores auxiliares y cualquier otro carácter sobrante
+5. Finalización y Limpieza: una vez terminado el proceso de multiplicación, la máquina vuelve a su estado final y detiene la ejecución, dejando únicamente la respuesta en unario en la cinta
 
-- Se escanea la entrada para localizar los dos operandos, identificando el primer número antes del `#` y el segundo después de este.
-
-### ✏️ **2. Copia del Primer Operando**
-
-- Se recorre el primer operando (`n` unos).
-- Se copia `n` veces según la cantidad de `1`s en el segundo operando (`m`).
-
-### 🔖 **3. Uso de Marcadores Auxiliares (`X` y `C`)**
-
-- `X`: Se usa temporalmente para marcar los `1`s procesados y evitar contarlos nuevamente.
-- `C`: Se usa para indicar la finalización del proceso de copiado de un grupo de `1`s.
-
-### 📜 **4. Construcción del Resultado**
-
-- Los `1`s copiados se reubican al final de la cinta, representando la multiplicación.
-- Se eliminan los marcadores auxiliares y cualquier otro carácter sobrante.
-
-### ✅ **5. Finalización y Limpieza**
-
-- Una vez terminado el proceso de multiplicación, la máquina vuelve a su estado final y detiene la ejecución, dejando únicamente la respuesta en unario en la cinta.
-
-## 📌 **3. Ejemplo de Ejecución Paso a Paso**
+## Ejemplo de Ejecución Paso a Paso
 
 **Entrada:** `111#11` (2 × 1)  
 **Pasos:**
@@ -69,19 +52,17 @@ La máquina de Turing sigue estos pasos para realizar la multiplicación:
 
 ---
 
-## 📌 **4. Definición Formal de la Máquina**
+## Definición Formal de la Máquina
 
-- 📋 **Formalismo**: MT = < Г, Σ, b, Q, q_0, F, δ>
+* MT = < Г, Σ, b, Q, q_0, F, δ>
 
-  - **📜 Alfabeto de la cinta**: Г = {1, #, X, C, b}
-  - **📜 Alfabeto de entrada**: Σ = {1, #}
-  - **📜 Símbolo blanco**: b = b
-  - **📜 Conjunto de estados**:  
-    Q = {q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24, q25, q26, q27, q28, q29, q30, q31, q32, q33, q34, q35}
-
-  - **📜 Estado inicial**: q0 = q0
-  - **📜 Estados finales**: F = {q4, q8, q14, q19, q29}
-  - **📜 Transiciones**:  
+  * **Alfabeto de la cinta**: Г = {1, #, X, C, b}
+  * **Alfabeto de entrada**: Σ = {1, #}
+  * **Símbolo blanco**: b = b
+  * **Conjunto de estados**: Q = {q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24, q25, q26, q27, q28, q29, q30, q31, q32, q33, q34, q35}
+  * **Estado inicial**: q0 = q0
+  * **Estados finales**: F = {q4, q8, q14, q19, q29}
+  * **Transiciones**:  
     δ = {
 
     - δ(q0, 1) = (q1, b, R)
@@ -178,20 +159,13 @@ La máquina de Turing sigue estos pasos para realizar la multiplicación:
 
 ---
 
-## 📌 **5. Simulación y Validación**
+## Simulación y Validación**
 
-📍 **Recursos:**
+* **Diseño en JFlap:** ![Diseño JFlap](./resources/jflap.png)
+* **Comprobaciones:**  ![picture 0](./resources/comprobaciones.png)
+* **Programa Simulator**: [Programa Simulator](http://turingmachinesimulator.com/shared/vitfcuxush)
 
-- 🖥️ **Diseño en JFlap:** ![Diseño JFlap](./resources/jflap.png)
-- 📊 **Comprobaciones:**
-  ![picture 0](./resources/comprobaciones.png)
-- **🔗 Programa Simulator**: [Programa Simulator](http://turingmachinesimulator.com/shared/vitfcuxush)
-
----
-
-## 📌 **6. Configuraciones de Computación (10 Inputs)**
-
-### 📊 **Tabla de Pruebas y Resultados**
+## Configuraciones de Computación (10 Inputs)
 
 | Entrada       | n (decimal) | m (decimal) | Multiplicación (n×m) | Salida esperada          | Espacios | Pasos | Estado   |
 | ------------- | ----------- | ----------- | -------------------- | ------------------------ | -------- | ----- | -------- |
@@ -206,11 +180,11 @@ La máquina de Turing sigue estos pasos para realizar la multiplicación:
 | 11#111111     | 1           | 5           | 1 × 5 = 5            | 111111                   | 9        | 7     | Aceptado |
 | 111111#11     | 5           | 1           | 5 × 1 = 5            | 111111                   | 10       | 19    | Aceptado |
 
-## 📌 **7. Cálculo de Complejidades en la Máquina de Turing**
+## Cálculo de Complejidades en la Máquina de Turing
 
 Se evalúa la complejidad **espacial** y **temporal** de la máquina de Turing utilizando datos de entrada. A partir de estos, se pueden obtener fórmulas matemáticas que describen su comportamiento.
 
-### 📊 **Complejidad Espacial**
+### Complejidad Espacial
 
 Para los casos base usamos la siguientes formulas:
 
@@ -221,13 +195,13 @@ Y para el caso de multiplicacion donde n es mayor a 1 y m es mayor a 1:
 
 - F(n,m) ={ si n,m >1 -> n\*m + n+2 }
 
-### ⏳ **Complejidad Temporal**
+### Complejidad Temporal
 
 La complejidad temporal para esta máquina solo se puede calcular de forma exacta cuando _n_ o _m_ valen 0(1u) o 1(11u)
 
 Cuando _n_ y _m_ son mayores a 1 no se puede calcular de forma exacta la cantidad de pasos que le toma la maquina de Turing computar ya que es alealtoria
 
-📌 **Reglas de cálculo:**
+**Reglas de cálculo:**
 
 - **CAS0 base “n=0”**
 

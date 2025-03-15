@@ -1,12 +1,6 @@
-# TP
-
-* Año: 2024
-
-## Mapa Conceptual
+# Máquina de Turing: Hamming de 4 bits
 
 ![Mapa Conceptual](./resources/mapa.png)
-
-## Máquina de Turing
 
 * El objetivo es diseñar una MT que a partir de un dato en binario de 4 bits genere el correspondiente código de Hamming para su posterior transmisión. A este escenario se lo denomina Código Hamming que para el caso particular de un dato de 4 bits, las tres paridades que se deben calcular son:
 
@@ -129,7 +123,6 @@ Para lograr este objetivo se plantean dos estrategias diferentes donde en la **e
 * **JFLAP**: [Diseño](./resources/E1-jflap.jff)
 * **JFLAP**: ![Diseño](./resources/E1-jflap.png)
 * **Simulator**: [Programa](./resources/E1-simulator.mt)
-* **Prolog**: [Programa](./resources/E1-prolog.pl)
 * **Inputs X 10: configuraciones de computación**:
 
   | Entrada | Salida   | Pasos | Espacios | Estado  |
@@ -283,7 +276,6 @@ Se genera $P_3$ y se reemplaza el `#` correspondiente según el formato y se pos
 * **JFLAP**: [Diseño](./resources/E2-jflap.jff)
 * **JFLAP**: ![Diseño](./resources/E2-jflap.png)
 * **Simulator**: [Programa](./resources/E2-simulator.mt)
-* **Prolog**: [Programa](./resources/E2-prolog.pl)
 * **Inputs X 10: configuraciones de computación**:
 
 | Entrada | Salida   | Pasos | Espacios | Estado  |

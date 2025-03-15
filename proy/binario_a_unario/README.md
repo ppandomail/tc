@@ -1,35 +1,6 @@
-# TP
+# Máquinas de Turing: Binario a Unario
 
-* Año: 2024
-* Alumnas: Ayelen, Florencia, Silvia
-
-## Mapa conceptual
-
-![picture 0](./resources/Captura1.JPG)  
-
-![picture 0](./resources/Captura2.JPG)  
-
-![picture 0](./resources/Captura3.JPG)  
-
-![picture 0](./resources/Captura4.JPG)  
-
-![picture 0](./resources/Captura5.JPG)  
-
-![picture 0](./resources/Captura6.JPG)  
-
-![picture 0](./resources/Captura7.JPG)  
-
-![picture 0](./resources/Captura8.JPG)  
-
-![picture 0](./resources/Captura9.JPG)  
-
-## Máquinas de Turing
-
-A continuación presentaremos dos máquinas de Turing que computan la misma función de diferentes maneras.
-
-Analizaremos cada una de ellas y se hará una breve conclusión de cuál es la mejor justificando la respuesta.
-
-### Máquina 1
+## Máquina 1
 
 * **Nombre**: "Máquina de Turing de Conversión Binario de 3 bits a Unario"
 * **Función que computa**: La función que computa esta máquina es convertir un número en representación binaria de 3 bits (000 a 111) a su equivalente en representación unaria. Por ejemplo, el número binario 011 (que es 3 en decimal) se convertirá en 111 en unario.
@@ -94,7 +65,6 @@ Analizaremos cada una de ellas y se hará una breve conclusión de cuál es la m
     * δ (q28, _) = (q13, _, S)
 * **Diseño en JFlap**: ![Diseño JFlap de M1](./resources/M1-jflap.JPG)
 * **Programa Simulator**: [Programa Simulator de M1](./resources/M1-simulator.mt)
-* **Programa Prolog**: [Programa Prolog de M1](./resources/M1-prolog.pl)
 * **Inputs**:
   ![picture 0](./resources/Captura11.JPG)
   ![picture 0](./resources/Captura12.JPG)
@@ -107,10 +77,10 @@ Analizaremos cada una de ellas y se hará una breve conclusión de cuál es la m
   ![picture 0](./resources/Captura19.JPG)
   ![picture 0](./resources/Captura20.JPG)
 
-* **Complejidad temporal**: 𝑂(𝑛), exprésado en términos de 𝑛 = 4 + 19 transiciones (máximo)
+* **Complejidad temporal**: 𝑂(𝑛), expresado en términos de 𝑛 = 4 + 19 transiciones (máximo)
 * **Complejidad espacial**: Si esta máquina de Turing utiliza 𝑛 = 3 + 4 celdas, entonces la complejidad espacial es 𝑂(𝑛)
 
-### Máquina 2
+## Máquina 2
 
 * **Nombre**: "Máquina de Turing de Conversión Binario de 3 bits a Unario mejorada"
 * **Función que computa**: La función que computa esta máquina es convertir un número en representación binaria de 3 bits (000 a 111) a su equivalente en representación unaria.
@@ -149,7 +119,6 @@ Analizaremos cada una de ellas y se hará una breve conclusión de cuál es la m
     * δ (q12, _) = (q8, _, S)
 * **Diseño en JFlap**: ![Diseño en JFlap de M2](./resources/M2-jflap.JPG)
 * **Programa Simulator**: [Programa Simulator de M2](./resources/M2-simulator.mt)
-* **Programa Prolog**: [Programa Prolog de M2](./resources/M2-prolog.pl)
 * **Inputs**:
   ![picture 0](./resources/Captura22.JPG)
   ![picture 0](./resources/Captura23.JPG)
@@ -162,7 +131,7 @@ Analizaremos cada una de ellas y se hará una breve conclusión de cuál es la m
   ![picture 0](./resources/Captura30.JPG)
   ![picture 0](./resources/Captura31.JPG)
 
-* **Complejidad temporal**: 𝑂(𝑛), exprésado en términos de 𝑛 = 4 + 11 transiciones (máximo)
+* **Complejidad temporal**: 𝑂(𝑛), expresado en términos de 𝑛 = 4 + 11 transiciones (máximo)
 * **Complejidad espacial**: Si esta máquina de Turing utiliza 𝑛 = 3 + 4 celdas, entonces la complejidad espacial es 𝑂(𝑛)
 
 ## Comparación de máquinas de Turing
