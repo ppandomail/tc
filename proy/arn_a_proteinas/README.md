@@ -1,8 +1,6 @@
 # Maquina de Turing: ARN a Proteinas
 
-## Tabla estandar de proteinas
-
-### Definición
+## Intro
 
 * La traducción del ARN a proteínas es el proceso mediante el cual la información genética codificada en la secuencia de ARN mensajero (ARNm) se utiliza para sintetizar proteínas específicas
 * Este proceso ocurre en los ribosomas, que actúan como las fábricas celulares de proteínas. Durante la traducción, los ribosomas leen secuencialmente los codones del ARNm y utilizan el código genético para ensamblar una cadena polipeptídica de aminoácidos, siguiendo las reglas de correspondencia entre los codones y los aminoácidos especificados por el ARN de transferencia (ARNt)
@@ -44,11 +42,11 @@
 
 ## MT1
 
-![JFLAP MT1](./resources/MT1.png)
+![JFLAP MT1](./resources/jflap1.png)
 
 ## MT2
 
-![JFLAP MT2](./resources/MT12.jpg)
+![JFLAP MT2](./resources/jflap2.jpg)
 
 ## Simulator
 

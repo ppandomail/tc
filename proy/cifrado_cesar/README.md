@@ -36,7 +36,7 @@ Una vez computada la resta si a izquierda del número tenemos un . este es reemp
 
 ## Alcance
 
-En el alcance de esta Máquina de Turing debemos tener algunas cosas en cuenta. 
+En el alcance de esta Máquina de Turing debemos tener algunas cosas en cuenta.
 
 En primer lugar debemos indicar la clave a utilizar de forma binaria, al tener 26 posibles letras en el alfabeto, podemos utilizar una clave con un valor mayor o igual a 1 y a su vez menor o igual a 25, puesto que cifrar con clave 26 sería lo mismo que no cifrar y hacerlo usando una clave mayor, como 27, sería lo mismo que desplazarse el resto de dividir esa clave entre 26.
 
@@ -97,227 +97,17 @@ Por otro lado, debemos tener en cuenta que luego de la clave debemos ingresar un
 1011001 -> Y<br>
 1011010 -> Z<br>
 
-## Formalismo
-
-MT=<Γ,Σ,b,Q,q0,F,δ><br>
-Alfabeto de la Cinta: Γ= {0,1,2,-,#,.,□}<br>
-Alfabeto de Entrada: Σ= {0,1,-,#}<br>
-Símbolo en Blanco: b=□<br>
-Estados: Q= {q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,q20,q21,q22,q23,q24,q25,q26,q27,q28,q29,q30,q31,q32,q33,q34,q35,q36,q37,q38,q39,q40,q41,q42,q43,q44,q45,q46,q47,q48,q49,q50,q51,q52,q53,q54,q55,q56,q57,q58,q59,q60,q61,q62,q63,q64,q65,q66,q67,q68,q69,q70,q71,q72,q73,q74}<br>
-Estado Inicial: q0 = q0<br>
-Estados de Aceptación: F= { q54 }<br>
-Transiciones:
-δ(q0, -) = (q1, -, L)<br>
-δ(q0, 0) = (q0, 0, R)<br>
-δ(q0, 1) = (q0, 1, R)<br>
-δ(q1, 1) = (q8, 1, R)<br>
-δ(q1, 0) = (q2, 0, L)<br>
-δ(q2, 0) = (q3, 0, L)<br>
-δ(q2, 1) = (q16, 1, R)<br>
-δ(q3, 0) = (q4, 0, L)<br>
-δ(q3, 1) = (q24, 1, R)<br>
-δ(q4, 0) = (q5, 0, L)<br>
-δ(q4, 1) = (q33, 1, R)<br>
-δ(q5, 1) = (q47, 1, R)<br>
-δ(q5, 0) = (q6, 0, R)<br>
-δ(q6, 0) = (q6, 0, R)<br>
-δ(q6, .) = (q6, ., R)<br>
-δ(q6, -) = (q6, -, R)<br>
-δ(q6, 1) = (q6, 1, R)<br>
-δ(q6, #) = (q15, ., L)<br>
-δ(q6, ☐) = (q7, ☐, L)<br>
-δ(q7, .) = (q23, ., R)<br>
-δ(q7, -) = (q23, -, R)<br>
-δ(q7, 1) = (q7, 1, L)<br>
-δ(q7, 0) = (q7, 0, L)<br>
-δ(q8, -) = (q9, -, R)<br>
-δ(q9, #) = (q10, #, L)<br>
-δ(q9, ☐) = (q10, ☐, L)<br>
-δ(q9, .) = (q9, ., R)<br>
-δ(q9, 0) = (q9, 0, R)<br>
-δ(q9, 1) = (q9, 1, R)<br>
-δ(q10, 1) = (q14, 0, L)<br>
-δ(q10, 0) = (q11, 1, L)<br>
-δ(q11, -) = (q12, -, L)<br>
-δ(q11, 0) = (q11, 0, L)<br>
-δ(q11, 1) = (q11, 1, L)<br>
-δ(q11, .) = (q11, ., L)<br>
-δ(q12, 1) = (q2, 1, L)<br>
-δ(q13, 0) = (q18, 0, L)<br>
-δ(q13, 1) = (q18, 1, L)<br>
-δ(q14, 1) = (q14, 0, L)<br>
-δ(q14, 0) = (q11, 1, L)<br>
-δ(q15, -) = (q15, -, L)<br>
-δ(q15, .) = (q15, ., L)<br>
-δ(q15, 1) = (q15, 1, L)<br>
-δ(q15, 0) = (q15, 0, L)<br>
-δ(q15, ☐) = (q0, ☐, R)<br>
-δ(q16, -) = (q17, -, R)<br>
-δ(q16, 0) = (q16, 0, R)<br>
-δ(q16, 1) = (q16, 1, R)<br>
-δ(q17, #) = (q13, #, L)<br>
-δ(q17, ☐) = (q13, ☐, L)<br>
-δ(q17, 0) = (q17, 0, R)<br>
-δ(q17, 1) = (q17, 1, R)<br>
-δ(q17, .) = (q17, ., R)<br>
-δ(q18, 1) = (q19, 0, L)<br>
-δ(q18, 0) = (q20, 1, L)<br>
-δ(q19, 0) = (q20, 1, L)<br>
-δ(q19, 1) = (q19, 0, L)<br>
-δ(q20, .) = (q20, ., L)<br>
-δ(q20, 1) = (q20, 1, L)<br>
-δ(q20, 0) = (q20, 0, L)<br>
-δ(q20, -) = (q21, -, L)<br>
-δ(q21, 0) = (q22, 0, L)<br>
-δ(q21, 1) = (q22, 1, L)<br>
-δ(q22, 1) = (q3, 1, L)<br>
-δ(q23, 0) = (q55, 0, L)<br>
-δ(q23, 1) = (q56, 1, R)<br>
-δ(q24, -) = (q25, -, R)<br>
-δ(q24, 0) = (q24, 0, R)<br>
-δ(q24, 1) = (q24, 1, R)<br>
-δ(q25, 1) = (q25, 1, R)<br>
-δ(q25, 0) = (q25, 0, R)<br>
-δ(q25, .) = (q25, ., R)<br>
-δ(q25, #) = (q26, #, L)<br>
-δ(q25, ☐) = (q26, ☐, L)<br>
-δ(q26, 0) = (q27, 0, L)<br>
-δ(q26, 1) = (q27, 1, L)<br>
-δ(q27, 0) ⇒ (q28, 0, L)<br>
-δ(q27, 1) ⇒ (q28, 1, L)<br>
-δ(q28, 0) ⇒ (q29, 1, L)<br>
-δ(q28, 1) ⇒ (q31, 0, L)<br>
-δ(q29, 0) ⇒ (q29, 0, L)<br>
-δ(q29, .) ⇒ (q29, ., L)<br>
-δ(q29, 1) ⇒ (q29, 1, L)<br>
-δ(q29, -) ⇒ (q30, -, L)<br>
-δ(q30, 0) ⇒ (q36, 0, L)<br>
-δ(q30, 1) ⇒ (q36, 1, L)<br>
-δ(q31, 1) ⇒ (q31, 0, L)<br>
-δ(q31, 0) ⇒ (q29, 1, L)<br>
-δ(q32, 0) ⇒ (q35, 0, L)<br>
-δ(q32, 1) ⇒ (q35, 1, L)<br>
-δ(q33, -) ⇒ (q34, -, R)<br>
-δ(q33, 0) ⇒ (q33, 0, R)<br>
-δ(q33, 1) ⇒ (q33, 1, R)<br>
-δ(q34, ☐) ⇒ (q32, ☐, L)<br>
-δ(q34, #) ⇒ (q32, #, L)<br>
-δ(q34, 1) ⇒ (q34, 1, R)<br>
-δ(q34, 0) ⇒ (q34, 0, R)<br>
-δ(q34, .) ⇒ (q34, ., R)<br>
-δ(q35, 0) ⇒ (q39, 0, L)<br>
-δ(q35, 1) ⇒ (q39, 1, L)<br>
-δ(q36, 1) ⇒ (q37, 1, L)<br>
-δ(q37, 1) ⇒ (q4, 1, L)<br>
-δ(q38, 1) ⇒ (q45, 0, L)<br>
-δ(q38, 0) ⇒ (q40, 1, L)<br>
-δ(q39, 0) ⇒ (q38, 0, L)<br>
-δ(q39, 1) ⇒ (q38, 1, L)<br>
-δ(q40, -) ⇒ (q41, -, L)<br>
-δ(q40, 1) ⇒ (q40, 1, L)<br>
-δ(q40, 0) ⇒ (q40, 0, L)<br>
-δ(q40, .) ⇒ (q40, ., L)<br>
-δ(q41, 0) ⇒ (q42, 0, L)<br>
-δ(q41, 1) ⇒ (q42, 1, L)<br>
-δ(q42, 0) ⇒ (q43, 0, L)<br>
-δ(q42, 1) ⇒ (q43, 1, L)<br>
-δ(q43, 0) ⇒ (q44, 0, L)<br>
-δ(q43, 1) ⇒ (q44, 1, L)<br>
-δ(q44, 1) ⇒ (q5, 1, L)<br>
-δ(q45, 0) ⇒ (q40, 1, L)<br>
-δ(q45, 1) ⇒ (q45, 0, L)<br>
-δ(q46, 0) ⇒ (q49, 0, L)<br>
-δ(q46, 1) ⇒ (q49, 1, L)<br>
-δ(q47, -) ⇒ (q48, -, R)<br>
-δ(q47, 1) ⇒ (q47, 1, R)<br>
-δ(q47, 0) ⇒ (q47, 0, R)<br>
-δ(q48, 0) ⇒ (q48, 0, R)<br>
-δ(q48, 1) ⇒ (q48, 1, R)<br>
-δ(q48, .) ⇒ (q48, ., R)<br>
-δ(q48, #) ⇒ (q76, #, L)<br>
-δ(q48, ☐) ⇒ (q76, ☐, L)<br>
-δ(q49, 0) ⇒ (q53, 0, L)<br>
-δ(q49, 1) ⇒ (q53, 1, L)<br>
-δ(q50, 1) ⇒ (q51, 0, L)<br>
-δ(q50, 0) ⇒ (q52, 1, R)<br>
-δ(q51, 1) ⇒ (q51, 0, L)<br>
-δ(q51, 0) ⇒ (q52, 1, R)<br>
-δ(q52, ☐) ⇒ (q7, ☐, L)<br>
-δ(q52, #) ⇒ (q15, ., L)<br>
-δ(q52, 0) ⇒ (q52, 0, R)<br>
-δ(q52, 1) ⇒ (q52, 1, R)<br>
-δ(q53, 0) ⇒ (q50, 0, L)<br>
-δ(q53, 1) ⇒ (q50, 1, L)<br>
-δ(q55, -) ⇒ (q54, -, R)<br>
-δ(q55, 0) ⇒ (q55, 0, L)<br>
-δ(q55, 1) ⇒ (q55, 1, L)<br>
-δ(q55, .) ⇒ (q7, #, L)<br>
-δ(q56, 0) ⇒ (q59, 0, R)<br>
-δ(q56, 1) ⇒ (q57, 1, R)<br>
-δ(q57, ☐) ⇒ (q58, ☐, L)<br>
-δ(q57, #) ⇒ (q58, #, L)<br>
-δ(q57, 0) ⇒ (q57, 0, R)<br>
-δ(q57, 1) ⇒ (q57, 1, R)<br>
-δ(q58, 1) ⇒ (q64, 1, L)<br>
-δ(q58, 0) ⇒ (q64, 0, L)<br>
-δ(q59, 0) ⇒ (q55, 0, L)<br>
-δ(q59, 1) ⇒ (q60, 1, R)<br>
-δ(q60, 1) ⇒ (q61, 1, R)<br>
-δ(q60, 0) ⇒ (q55, 0, L)<br>
-δ(q61, 1) ⇒ (q57, 1, R)<br>
-δ(q61, 0) ⇒ (q62, 0, R)<br>
-δ(q62, 0) ⇒ (q55, 0, R)<br>
-δ(q62, 1) ⇒ (q63, 1, R)<br>
-δ(q63, 1) ⇒ (q57, 1, R)<br>
-δ(q63, 0) ⇒ (q55, 0, L)<br>
-δ(q64, 1) ⇒ (q65, 0, L)<br>
-δ(q64, 0) ⇒ (q70, 1, L)<br>
-δ(q65, 0) ⇒ (q66, 0, L)<br>
-δ(q65, 1) ⇒ (q66, 1, L)<br>
-δ(q66, 0) ⇒ (q72, 1, L)<br>
-δ(q66, 1) ⇒ (q67, 0, L)<br>
-δ(q67, 1) ⇒ (q68, 0, L)<br>
-δ(q67, 0) ⇒ (q74, 1, L)<br>
-δ(q68, 1) ⇒ (q68, 1, L)<br>
-δ(q68, 0) ⇒ (q68, 0, L)<br>
-δ(q68, .) ⇒ (q7, #, L)<br>
-δ(q68, -) ⇒ (q54, -, R)<br>
-δ(q70, 1) ⇒ (q71, 0, R)<br>
-δ(q70, 0) ⇒ (q70, 2, L)<br>
-δ(q71, 1) ⇒ (q65, 1, L)<br>
-δ(q71, 2) ⇒ (q71, 1, R)<br>
-δ(q72, 0) ⇒ (q72, 2, L)<br>
-δ(q72, 1) ⇒ (q73, 0, R)<br>
-δ(q73, 1) ⇒ (q67, 1, L)<br>
-δ(q73, 2) ⇒ (q73, 1, R)<br>
-δ(q74, 1) ⇒ (q75, 0, R)<br>
-δ(q74, 0) ⇒ (q74, 2, L)<br>
-δ(q69, 2) ⇒ (q75, 1, R)<br>
-δ(q69, 1) ⇒ (q68, 1, L)<br>
-δ(q76, 0) ⇒ (q46, 0, L)<br>
-δ(q76, 1) ⇒ (q46, 1, L)<br>
-
 ## Diseño de JFLAP
 
-### Diseño de la primera parte
-
-![JFLAP-primera-parte](/resources/img/primera-parte.png)
-
-### Diseño de la segunda parte
-
-![JFLAP-segunda-parte](/resources/img/segunda-parte.png)
-
-### Diseño de la tercera parte
-
-![JFLAP-tercera-parte](/resources/img/tercera-parte.png)
+![JFLAP-primera-parte](/resources/img/jflap1.png)
+![JFLAP-segunda-parte](/resources/img/jflap2.png)
+![JFLAP-tercera-parte](/resources/img/jflap3.png)
 
 ## Programa en simulator
 
-Simulator: <a>http://turingmachinesimulator.com/shared/rowquykrdy/</a>
+Configuración: [mt-conf](/resources/simulator.mt)
 
-Configuración: [mt-conf](/resources/MT.mt)
-
-## Inputs X 10
+## Inputs
 
 |         Input          |         Output         |
 | ---------------------- | ---------------------- |
@@ -334,7 +124,7 @@ Configuración: [mt-conf](/resources/MT.mt)
 
 ## Complejidad espacial
 
-|         Input          |         Output         |   Long. w de entrada   |   Long. w de salida    |   
+|         Input          |         Output         |   Long. w de entrada   |   Long. w de salida    |
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
 |     00001-1000001      |     00001-1000001      |           13           |           13           |
 |     00010-1000001      |     00010-1000011      |           13           |           13           |

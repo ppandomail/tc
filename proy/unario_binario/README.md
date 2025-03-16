@@ -39,102 +39,15 @@ Ejemplo con número 11111 (_4_ en decimal o lo que es lo mismo _100_ binario):
 - 00#1 - Por último, antes de entrar a alternar _Ys_ comprueba si luego del # hay un solo digito o ninguno, para determinar inmediatamente el ultimo resto, Si luego del # hay b(blanco) el resto es _0_, sino es _1_
 - 100 - ahora por último elimina los de números y _#_ derechos, y almacena el resto en la izquierda
 
-## Formalismo
+## JFlap
 
-MT = < Г, Σ, b, Q, q_0, F, δ>
-
-  - Alfabeto de la cinta: Г = {1, 0, Y, b, #}
-  - Alfabeto de entrada: Σ = {1}
-  - Símbolo blanco: b = b
-  - Conjunto de estados: Q = {q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19,q20, q21, q22, q23, q24, q25, q26, q27, q28, q29, q30, q31, q32, q33, q34, q35, q36, q37, q38, q39, q40, q41, q42}
-  - Estado inicial: q0 = q0
-  - Estados finales: F = {q3, q6, q11, q19}
-  - Transiciones: δ = {
-    - δ(q0, 1) = (q1, #, R),
-    - δ(q1, 1) = (q4, 1, R),
-    - δ(q1, b) = (q2, b, L),
-    - δ(q2, #) = (q3, 0, S),
-    - δ(q4, b) = (q5, b, L),
-    - δ(q4, 1) = (q7, 1, R),
-    - δ(q5, 1) = (q5, b, L),
-    - δ(q5, #) = (q6, 1, S),
-    - δ(q7, b) = (q8, b, L),
-    - δ(q7, 1) = (q12, 1, L),
-    - δ(q8, 1) = (q9, 0, L),
-    - δ(q9, 1) = (q9, 1, L),
-    - δ(q9, #) = (q10, b, R),
-    - δ(q10, 1) = (q11, 1, S),
-    - δ(q12, 1) = (q12, 1, L),
-    - δ(q12, #) = (q13, #, R),
-    - δ(q13, 1) = (q14, 1, R),
-    - δ(q14, b) = (q15, b, L),
-    - δ(q14, 1) = (q20, 1, R),
-    - δ(q15, #) = (q16, b, L),
-    - δ(q16, 1) = (q16, 1, L),
-    - δ(q16, 0) = (q16, 0, L),
-    - δ(q16, b) = (q19, 0, S),
-    - δ(q17, 1) = (q17, b, L),
-    - δ(q17, #) = (q18, b, L),
-    - δ(q18, 1) = (q18, 1, L),
-    - δ(q18, 0) = (q18, 0, L),
-    - δ(q18, b) = (q19, 1, S),
-    - δ(q20, b) = (q17, b, L),
-    - δ(q20, 1) = (q21, 1, L),
-    - δ(q21, 1) = (q21, 1, L),
-    - δ(q21, #) = (q22, #, R),
-    - δ(q22, 1) = (q23, Y, R),
-    - δ(q22, b) = (q24, b, L),
-    - δ(q23, 1) = (q22, 1, R),
-    - δ(q23, b) = (q24, b, L),
-    - δ(q24, 1) = (q25, 1, R),
-    - δ(q24, Y) = (q26, b, L),
-    - δ(q25, b) = (q27, b, L),
-    - δ(q26, 1) = (q32, 1, S),
-    - δ(q27, 1) = (q27, 1, L),
-    - δ(q27, #) = (q39, #, L),
-    - δ(q27, Y) = (q28, b, R),
-    - δ(q28, 1) = (q29, 1, R),
-    - δ(q28, b) = (q38, b, L),
-    - δ(q29, 1) = (q29, 1, R),
-    - δ(q29, b) = (q30, b, L),
-    - δ(q30, 1) = (q31, b, L),
-    - δ(q31, 1) = (q31, 1, L),
-    - δ(q31, b) = (q27, 1, L),
-    - δ(q32, Y) = (q33, b, R),
-    - δ(q32, 1) = (q32, 1, L),
-    - δ(q32, #) = (q41, #, L),
-    - δ(q33, 1) = (q34, 1, R),
-    - δ(q33, b) = (q37, b, L),
-    - δ(q34, 1) = (q34, 1, R),
-    - δ(q34, b) = (q35, b, L),
-    - δ(q35, 1) = (q36, b, L),
-    - δ(q36, 1) = (q36, 1, L),
-    - δ(q36, b) = (q32, 1, L),
-    - δ(q37, b) = (q32, b, L),
-    - δ(q38, b) = (q27, b, L),
-    - δ(q39, 1) = (q39, 1, L),
-    - δ(q39, 0) = (q39, 0, L),
-    - δ(q39, b) = (q40, 0, R),
-    - δ(q40, 1) = (q40, 1, R),
-    - δ(q40, 0) = (q40, 0, R),
-    - δ(q40, #) = (q14, #, R),
-    - δ(q41, 1) = (q41, 1, L),
-    - δ(q41, 0) = (q41, 0, L),
-    - δ(q41, b) = (q42, 1, R),
-    - δ(q42, 1) = (q42, 1, R),
-    - δ(q42, 0) = (q42, 0, R),
-    - δ(q42, #) = (q14, #, R),
-    - }
-
-## Diseño en JFlap
-
-![Diseño JFlap](./resources/jflap.jpg)
+![Diseño JFlap](resources/jflap.jpg)
 
 ## Comprobaciones
 
-![picture 0](./resources/comprobaciones.jpg)
+![picture 0](resources/comprobaciones.jpg)
 
-## Tabla con x10 inputs
+## Inputs
 
   |n (decimal) | Conf. inicial | Conf. final | Pasos | Espacios | Estado |
   | --- | --- | --- | --- | --- | --- |
@@ -149,9 +62,9 @@ MT = < Г, Σ, b, Q, q_0, F, δ>
   | 8 | 111111111 | 1000 | 122 | 14 | Aceptado |
   | 9 | 1111111111 | 1001 | 123 | 15 | Aceptado |
 
-## Programa Simulator
+## Simulator
 
-[Programa Simulator](https://turingmachinesimulator.com/shared/jlyefvhecl)
+[Programa Simulator](resources/simulator.mt)
 
 ## Calculos de complejidades computacional en la máquinas de Turing
 
@@ -159,10 +72,10 @@ Se evalúa en términos de su complejidad espacial y temporal, usando datos de e
 
 ### Complejidad Espacial
 
-![Formula Esp](./resources/formula-espacial.png)
+![Formula Esp](resources/formula-espacial.png)
 
 - S(n) = { (​⌊log2(​n)⌋ + 1) + n + 2 / n ≥ 4 } U { 1 / n = 0 } U { 2 / n = 1 } U { 4 / n = 2 } U { 7 / n = 3 }
-- ![Comp Esp](./resources/comp-espacial.png)
+- ![Comp Esp](resources/comp-espacial.png)
 
 | Espacio | n   |
 | ------- | --- |
@@ -194,7 +107,7 @@ En términos de complejidad espacial es 𝑂(𝑛), ya que crece linealmente.
 
 ### Complejidad Temporal
 
-![Comp temp](./resources/comp-temporal.png)
+![Comp temp](resources/comp-temporal.png)
 
 | n   | Pasos (Tiempo) | Representación unaria |
 | --- | -------------- | --------------------- |
