@@ -88,34 +88,34 @@ La fórmula utilizada para calcular la cantidad de movimientos es la siguiente:
 
 ``` 6*n^2 + 11*n + 3 ```
 
-- ```Si n=1 = 61^2 + 11*1 + 3 = 20```
-- ```Si n=2 = 6*2^2 + 11*2 + 3 = 49```
-- ```Si n=3 = 6*3^2 + 11*3 + 3 = 90```
-- ```Si n=4 = 6*4^2 + 11*4 + 3 = 143```
-- ```Si n=5 = 6*5^2 + 11*5 + 3 = 208```
-- ```Si n=6 = 6*6^2 + 11*6 + 3 = 285```
-- ```Si n=7 = 6*7^2 + 11*7 + 3 = 374```
-- ```Si n=8 = 6*8^2 + 11*8 + 3 = 475```
-- ```Si n=9 = 6*9^2 + 11*9 + 3 = 588```
-- ```Si n=10 = 6*10^2 + 11*10 + 3 = 713```
+* ```Si n=1 = 61^2 + 11*1 + 3 = 20```
+* ```Si n=2 = 6*2^2 + 11*2 + 3 = 49```
+* ```Si n=3 = 6*3^2 + 11*3 + 3 = 90```
+* ```Si n=4 = 6*4^2 + 11*4 + 3 = 143```
+* ```Si n=5 = 6*5^2 + 11*5 + 3 = 208```
+* ```Si n=6 = 6*6^2 + 11*6 + 3 = 285```
+* ```Si n=7 = 6*7^2 + 11*7 + 3 = 374```
+* ```Si n=8 = 6*8^2 + 11*8 + 3 = 475```
+* ```Si n=9 = 6*9^2 + 11*9 + 3 = 588```
+* ```Si n=10 = 6*10^2 + 11*10 + 3 = 713```
 
 Como se puede visualizar en la columna _movimientos_ de la tabla inputs, la cantidad de movimientos aumenta cuadráticamente con respecto al tamaño de la entrada. Tambien se nota que la diferencia de movimientos entre cada n crece 12 movimientos cada vez que se aumenta en 1 el tamaño de la entrada.
 
 ### Complejidad espacial
 
-La complejidad espacial de la máquina de Turing es ```O(n)```, donde n es el número de caracteres en la cadena de entrada. Esto se debe a que la máquina de Turing tiene que almacenar la cadena de entrada y su representación hexadecimal en la cinta, lo que requiere espacio lineal en función del tamaño de la entrada.
+La complejidad espacial de la máquina de Turing es **O(n)**, donde n es el número de caracteres en la cadena de entrada. Esto se debe a que la máquina de Turing tiene que almacenar la cadena de entrada y su representación hexadecimal en la cinta, lo que requiere espacio lineal en función del tamaño de la entrada.
 
 La fórmula utilizada para calcular la cantidad de espacios es la siguiente:
 
 ``` 3*n + 3 ```
 
-- ```Si n=1 = 3*1 + 3 = 6```
-- ```Si n=2 = 3*2 + 3 = 9```
-- ```Si n=3 = 3*3 + 3 = 12```
-- ```Si n=4 = 3*4 + 3 = 15```
-- ```Si n=5 = 3*5 + 3 = 18```
-- ```Si n=6 = 3*6 + 3 = 21```
-- ```Si n=7 = 3*7 + 3 = 24```
-- ```Si n=8 = 3*8 + 3 = 27```
-- ```Si n=9 = 3*9 + 3 = 30```
-- ```Si n=10 = 3*10 + 3 = 33```
+* ```Si n=1 = 3*1 + 3 = 6```
+* ```Si n=2 = 3*2 + 3 = 9```
+* ```Si n=3 = 3*3 + 3 = 12```
+* ```Si n=4 = 3*4 + 3 = 15```
+* ```Si n=5 = 3*5 + 3 = 18```
+* ```Si n=6 = 3*6 + 3 = 21```
+* ```Si n=7 = 3*7 + 3 = 24```
+* ```Si n=8 = 3*8 + 3 = 27```
+* ```Si n=9 = 3*9 + 3 = 30```
+* ```Si n=10 = 3*10 + 3 = 33```

@@ -6,7 +6,7 @@ Máquina de Turing para la Multiplicación Unaria
 
 ## Función que Computa
 
-La máquina toma dos números en notación unaria, representados por secuencias de '1's separadas por '#'', y calcula su **producto en unario**
+La máquina toma dos números en notación unaria, representados por secuencias de '1's separadas por '#', y calcula su **producto en unario**
 
 ## Ejemplos de Entrada y Salida
 
@@ -18,7 +18,7 @@ La máquina toma dos números en notación unaria, representados por secuencias 
 
 ## Descripción y estrategia mejorada
 
-La máquina de Turing realiza la multiplicación de dos números representados en **notación unaria**. Cada número está formado por una secuencia de '1's y está separado por el símbolo '#''. El objetivo es calcular el producto de estos dos números y escribir el resultado en la cinta, utilizando también notación unaria.
+La máquina de Turing realiza la multiplicación de dos números representados en **notación unaria**. Cada número está formado por una secuencia de '1's y está separado por el símbolo '#'. El objetivo es calcular el producto de estos dos números y escribir el resultado en la cinta, utilizando también notación unaria.
 
 ---
 
@@ -40,15 +40,15 @@ La máquina de Turing sigue estos pasos para realizar la multiplicación:
 
 ## Ejemplo de Ejecución Paso a Paso
 
-**Entrada:** `111#11` (2 × 1)  
+**Entrada:** '111#11' (2 × 1)  
 **Pasos:**
 
-1. Se identifica `n=2` (`111`) y `m=1` (`11`).
-2. Se recorre `111`, y por cada `1` encontrado, se copia `111` dos veces.
+1. Se identifica 'n=2' ('111') y 'm=1' ('11').
+2. Se recorre '111', y por cada '1' encontrado, se copia '111' dos veces.
 3. Se eliminan los símbolos auxiliares.  
-   **Salida esperada:** `111` (2 en unario).
+   **Salida esperada:** '111' (2 en unario).
 
-🔹 Este enfoque garantiza que el resultado refleja correctamente la operación de multiplicación en un sistema sin ceros , basado únicamente en la cantidad de `1`s.
+* Este enfoque garantiza que el resultado refleja correctamente la operación de multiplicación en un sistema sin ceros, basado únicamente en la cantidad de '1's.
 
 ---
 
@@ -85,12 +85,12 @@ Se evalúa la complejidad **espacial** y **temporal** de la máquina de Turing u
 
 Para los casos base usamos la siguientes formulas:
 
-- S(n,m) = { si (n = 0 ∨ n = 1 ) -> m + 4}
-- S(n,m) = { si n > 0 ∧ (m = 0 ∨ m=1 ) -> n + 5 }
+* S(n,m) = { si (n = 0 ∨ n = 1 ) -> m + 4}
+* S(n,m) = { si n > 0 ∧ (m = 0 ∨ m=1 ) -> n + 5 }
 
 Y para el caso de multiplicacion donde n es mayor a 1 y m es mayor a 1:
 
-- F(n,m) ={ si n,m >1 -> n\*m + n+2 }
+* F(n,m) ={ si n,m >1 -> n\*m + n+2 }
 
 ### Complejidad Temporal
 
@@ -100,23 +100,23 @@ Cuando _n_ y _m_ son mayores a 1 no se puede calcular de forma exacta la cantida
 
 **Reglas de cálculo:**
 
-- **CAS0 base “n=0”**
+* **CAS0 base “n=0”**
 
-  - T(n,m) = { si n = 0 -> (2\*m)+5 }
+  * T(n,m) = { si n = 0 -> (2\*m)+5 }
 
-- **CAS0 base “n=1”**
+* **CAS0 base “n=1”**
 
-  - T(n,m) = { si n = 1 -> 7}
+  * T(n,m) = { si n = 1 -> 7}
 
-- **CAS0 base “ n > 1 ∧ m=0”**
+* **CAS0 base “ n > 1 ∧ m=0”**
 
-  - T(n,m) = { si n >1 ∧ m=0 -> 2\*n +6}
+  * T(n,m) = { si n >1 ∧ m=0 -> 2\*n +6}
 
-- **CAS0 base “ n > 1 ∧ m=1”**
+* **CAS0 base “ n > 1 ∧ m=1”**
 
-  - T(n,m) = { si n >1 ∧ m=1 -> 2\*n + 9}
+  * T(n,m) = { si n >1 ∧ m=1 -> 2\*n + 9}
 
-- **CAS0S donde “ n , m > 1”**
+* **CAS0S donde “ n , m > 1”**
 
 Para estos casos el incremento de los pasos es alealtorio, no sigue un orden lineal
 
