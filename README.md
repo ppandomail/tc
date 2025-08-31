@@ -13,9 +13,9 @@
 | Unidad | Contenido                                                                      | Ejercicios                                       |
 | --     | --                                                                             | --                                               |
 | 01     | [Computabilidad](doc/01-computabilidad.ipynb)                                  | [TP Computabilidad](tps/01-computabilidad.ipynb) |
-| 02     | [Complejidad](doc/02-comple-contenido.md)                                      | [TP Complejidad](tps/02-complejidad.ipynb)       |
+| 02     | [Complejidad](doc/02-complejidad.ipynb)                                        | [TP Complejidad](tps/02-complejidad.ipynb)       |
 | 03     | [Maquinaria computacional e Inteligencia](doc/03-maquinaria-computacional.pdf) |                                                  |
-| 04     | [Conclusiones](doc/04-conclusiones.md)                                         |                                                  |
+| 04     | [Conclusiones](doc/04-conclusiones.ipynb)                                      |                                                  |
 
 ## Bibliografía
 
