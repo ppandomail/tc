@@ -10,12 +10,12 @@
 
 ## Programa
 
-| Unidad | | Universidad | Contenido | Ejercicios |
-| -- | -- | -- | -- | -- |
-| 01 | TC   | UNAHUR | [Teoría de la Computabilidad](doc/01-comput-contenido.md)            | [Ejercicios](doc/01-comput-ejercicios.md) |
-| 02 | TCC  | UNAHUR | [Teoría de la Complejidad Computacional](doc/02-comple-contenido.md) | [Ejercicios](doc/02-comple-ejercicios.md) |
-| 03 | MAQ  | UNAHUR | [Maquinaria computacional e Inteligencia](doc/03-maquinaria-computacional.pdf) ||
-| 04 | FIN  | UNAHUR | [Conclusiones](doc/04-conclusiones.md) ||
+| Unidad | Contenido                                                                      | Ejercicios                                       |
+| --     | --                                                                             | --                                               |
+| 01     | [Computabilidad](doc/01-computabilidad.ipynb)                                  | [TP Computabilidad](tps/01-computabilidad.ipynb) |
+| 02     | [Complejidad](doc/02-comple-contenido.md)                                      | [TP Complejidad](tps/02-complejidad.ipynb)       |
+| 03     | [Maquinaria computacional e Inteligencia](doc/03-maquinaria-computacional.pdf) |                                                  |
+| 04     | [Conclusiones](doc/04-conclusiones.md)                                         |                                                  |
 
 ## Bibliografía
 
