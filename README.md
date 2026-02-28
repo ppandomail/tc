@@ -1,8 +1,8 @@
-# Teoría de la Computación (UNAHUR)
+# Computabilidad y Complejidad
 
-## Docentes
+## Docente
 
-* Titular: Mg. Ing. Pablo Pandolfo
+* **Titular**: Mg. Ing. Pablo Pandolfo
 
 ## Objetivos
 
