@@ -10,13 +10,18 @@
 
 ## Programa
 
-| Unidad | Contenido                                                           | Ejercicios                                                       |
-| --     | --                                                                  | --                                                               |
-| 01     | [Intro](doc/intro.ipynb)                                            | [TP Intro](tps/intro.ipynb)                                      |
-| 02     | [M Turing](https://github.com/ppandomail/lf/blob/main/doc/mt.ipynb) | [TP MT](https://github.com/ppandomail/lf/blob/main/tps/mt.ipynb) |
-| 03     | [Computabilidad](doc/compu.ipynb)                                   | [TP Compu](tps/compu.ipynb)                                      |
-| 04     | [Complejidad](doc/comple.ipynb)                                     | [TP Comple](tps/comple.ipynb)                                    |
-| 05     | [Computación cuántica](doc/cuanti.ipynb)                            | [TP Cuanti](tps/cuanti.ipynb)                                    |
+| Unidad | Contenido                                                           | Ejercicios                                                        |
+| --     | --                                                                  | --                                                                |
+| 01     | [Intro](doc/intro.ipynb)                                            | [TP Intro](tps/intro.ipynb)                                       |
+| 02     | [MTr](https://github.com/ppandomail/lf/blob/main/doc/mt.ipynb)      | [TP MTr](https://github.com/ppandomail/lf/blob/main/tps/mt.ipynb) |
+| 02     | [MTc](doc/mtc.ipynb)                                                | [TP MTc](tps/mtc.ipynb)                                           |
+| 02     | [MTU](doc/mtu.ipynb)                                                | [TP MTU](tps/mtu.ipynb)                                           |
+| 02     | [Prob](doc/prob.ipynb)                                              | [TP Prob](tps/prob.ipynb)                                         |
+| 02     | [Mseq](doc/mseq.ipynb)                                              | [TP Mseq](tps/mseq.ipynb)                                         |
+| 02     | [MP](doc/mp.ipynb)                                                  | [TP MP](tps/mp.ipynb)                                             |
+| 02     | [AFP](doc/afp.ipynb)                                                | [TP AFP](tps/afp.ipynb)                                           |
+| 03     | [Complejidad](doc/comple.ipynb)                                     | [TP Comple](tps/comple.ipynb)                                     |
+| 04     | [Computación cuántica](doc/cuanti.ipynb)                            | [TP Cuanti](tps/cuanti.ipynb)                                     |
 
 ## Bibliografía
 
