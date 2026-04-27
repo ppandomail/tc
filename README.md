@@ -18,6 +18,7 @@
 | 02     | [MTU](doc/mtu.ipynb)                                                | [TP MTU](tps/mtu.ipynb)                                           |
 | 02     | [Prob](doc/prob.ipynb)                                              | [TP Prob](tps/prob.ipynb)                                         |
 | 02     | [Mseq](doc/mseq.ipynb)                                              | [TP Mseq](tps/mseq.ipynb)                                         |
+| 02     | [PN](doc/pn.ipynb)                                                  | [TP PN](tps/pn.ipynb)                                             |
 | 02     | [MP](doc/mp.ipynb)                                                  | [TP MP](tps/mp.ipynb)                                             |
 | 02     | [AFP](doc/afp.ipynb)                                                | [TP AFP](tps/afp.ipynb)                                           |
 | 03     | [Complejidad](doc/comple.ipynb)                                     | [TP Comple](tps/comple.ipynb)                                     |
