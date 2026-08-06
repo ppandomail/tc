@@ -6,7 +6,7 @@
 
 ## Objetivos
 
-* Capacidad para tener un conocimiento profundo de los principios fundamentales y modelos de la computación y saberlos aplicar para interpretar, seleccionar, valorar, modelar, y crear nuevos conceptos, teorías, usos y desarrollos tecnológicos relacionados con la informática
+* Entender qué problemas se pueden resolver con una computadora, cuántos recursos se necesitan para ello y cuáles son los límites reales del cálculo 
 
 ## Programa
 
